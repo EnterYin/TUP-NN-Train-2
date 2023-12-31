@@ -119,8 +119,7 @@ def main():
         
         # use onnxsimplify to reduce reduent model.
         onnx_model = onnx.load(args.output_name)
-        model_simp, check = simplify(onnx_model,
-                                     overwrite_input_shapes=input_shapes if not args.dynamic else None)
+        model_simp, check = simplify(onnx_model,overwrite_input_shapes=input_shapes if not args.dynamic else None)
         assert check, "Simplified ONNX model could not be validated"
         onnx.save(model_simp, args.output_name)
         logger.info("generated simplified onnx model named {}".format(args.output_name))
