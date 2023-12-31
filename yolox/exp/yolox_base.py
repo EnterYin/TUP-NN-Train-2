@@ -17,10 +17,10 @@ class Exp(BaseExp):
         super().__init__()
         # ---------------- transfer learning config ---------------- #
         self.use_distillation  = False
-        self.teacher_pth = "/home/rangeronmars/AI/TUP-NN-Train/teacher/teacher.pth"
+        self.teacher_pth = "/root/TUP-NN-Train-2/teacher/teacher.pth"
         # ---------------- model config ---------------- #
-        self.num_classes = 1
-        self.num_colors = 2
+        self.num_classes = 9
+        self.num_colors = 4
         self.num_apexes = 4
         # self.num_classes = 2
         # self.num_colors = 2
@@ -46,9 +46,9 @@ class Exp(BaseExp):
         # self.multiscale_range = 5
         # You can uncomment this line to specify a multiscale range
         self.random_size = (10, 18)
-        self.data_dir = "/home/ninefish/datasets/stone_two"
-        self.train_ann = "instances_train2017.json"
-        self.val_ann = "instances_val2017.json"
+        self.data_dir = "/root/autodl-tmp/armor_finnal"
+        self.train_ann = "/root/autodl-tmp/armor_finnal/annotations/instances_train2017.json"
+        self.val_ann = "/root/autodl-tmp/armor_finnal/annotations/instances_val2017.json"
 
         # --------------- transform config ----------------- #
         #Mosaic
