@@ -16,7 +16,6 @@ from yolox.utils import configure_module, configure_nccl, configure_omp, get_num
 
 from teacher.teacher_model import Teacher
 
-
 def make_parser():
     parser = argparse.ArgumentParser("YOLOX train parser")
     parser.add_argument("-expn", "--experiment-name", type=str, default=None)
@@ -44,13 +43,13 @@ def make_parser():
         help="plz input your experiment description file",
     )
     parser.add_argument(
-        "--resume", default=False, action="store_true", help="resume training"
+        "--resume", default=True, action="store_true", help="resume training"
     )
-    parser.add_argument("-c", "--ckpt", default=None, type=str, help="checkpoint file")
+    parser.add_argument("-c", "--ckpt", default='/root/TUP-NN-Train-2/YOLOX_outputs/nano_poly/best_ckpt.pth', type=str, help="checkpoint file")
     parser.add_argument(
         "-e",
         "--start_epoch",
-        default=None,
+        default=992,
         type=int,
         help="resume training start epoch",
     )
